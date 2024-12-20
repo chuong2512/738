@@ -3,11 +3,9 @@
 // a copy of which is available at http://unity3d.com/company/legal/as_terms.
 
 using System.Collections.Generic;
-
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
-
 using GameVanilla.Core;
 using GameVanilla.Game.Common;
 using GameVanilla.Game.Popups;
@@ -19,26 +17,19 @@ namespace GameVanilla.Game.UI
     /// </summary>
     public class IapRow : MonoBehaviour
     {
-        [HideInInspector]
-        public BuyCoinsPopup buyCoinsPopup;
+        [HideInInspector] public BuyCoinsPopup buyCoinsPopup;
+
+        private int index;
 
 #pragma warning disable 649
-        [SerializeField]
-        private GameObject mostPopular;
-        [SerializeField]
-        private GameObject bestValue;
-        [SerializeField]
-        private GameObject discount;
-        [SerializeField]
-        private Text discountText;
-        [SerializeField]
-        private Text numCoinsText;
-        [SerializeField]
-        private Text priceText;
-        [SerializeField]
-        private Image coinsImage;
-        [SerializeField]
-        private List<Sprite> coinIcons;
+        [SerializeField] private GameObject mostPopular;
+        [SerializeField] private GameObject bestValue;
+        [SerializeField] private GameObject discount;
+        [SerializeField] private Text discountText;
+        [SerializeField] private Text numCoinsText;
+        [SerializeField] private Text priceText;
+        [SerializeField] private Image coinsImage;
+        [SerializeField] private List<Sprite> coinIcons;
 #pragma warning restore 649
 
         private IapItem cachedItem;
@@ -61,9 +52,12 @@ namespace GameVanilla.Game.UI
         /// Fills this widget with the specified IAP item's information.
         /// </summary>
         /// <param name="item">The IAP item with which to fill this widget.</param>
-        public void Fill(IapItem item)
+        /// <param name="i"></param>
+        public void Fill(IapItem item, int i)
         {
             cachedItem = item;
+
+            index = i;
 
             numCoinsText.text = item.numCoins.ToString("n0");
             if (item.discount > 0)
@@ -91,20 +85,23 @@ namespace GameVanilla.Game.UI
 
             coinsImage.sprite = coinIcons[(int)item.coinIcon];
             coinsImage.SetNativeSize();
-
-            #if CANDY_MATCH_ENABLE_IAP
-            var storeController = PuzzleMatchManager.instance.iapManager.controller;
-            if (storeController != null)
+            
+            switch (index)
             {
-                var product = storeController.products.WithID(item.storeId);
-                if (product != null)
-                {
-                    priceText.text = product.metadata.localizedPriceString;
-                }
+                case 0:
+                    priceText.text = "$9,99";
+                    break;
+                case 3:
+                    priceText.text = "$0,99";
+                    break;
+                case 2:
+                    priceText.text = "$2,99";
+                    break;
+                case 1:
+                    priceText.text = "$4,99";
+                    break;
             }
-            #else
-            priceText.text = "$5,99";
-            #endif
+            
         }
 
         /// <summary>
@@ -112,16 +109,27 @@ namespace GameVanilla.Game.UI
         /// </summary>
         public void OnPurchaseButtonPressed()
         {
-            #if CANDY_MATCH_ENABLE_IAP
-            var storeController = PuzzleMatchManager.instance.iapManager.controller;
-            if (storeController != null)
+            IAPManager.OnPurchaseSuccess = () =>
+                PuzzleMatchManager.instance.coinsSystem.BuyCoins(cachedItem.numCoins);
+
+
+            switch (index)
             {
-                storeController.InitiatePurchase(cachedItem.storeId);
-                buyCoinsPopup.OpenLoadingPopup();
+                case 3:
+                    IAPManager.Instance.BuyProductID(IAPKey.PACK1_RE);
+                    break;
+                case 2:
+                    IAPManager.Instance.BuyProductID(IAPKey.PACK2_RE);
+                    break;
+                case 1:
+                    IAPManager.Instance.BuyProductID(IAPKey.PACK3_RE);
+                    break;
+                case 0:
+                    IAPManager.Instance.BuyProductID(IAPKey.PACK4_RE);
+                    break;
             }
-            #else
-            PuzzleMatchManager.instance.coinsSystem.BuyCoins(cachedItem.numCoins);
-            #endif
+
+
             GetComponent<PlaySound>().Play("Button");
         }
     }

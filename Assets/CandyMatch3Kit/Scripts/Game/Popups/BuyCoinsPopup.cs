@@ -55,11 +55,21 @@ namespace GameVanilla.Game.Popups
             numCoinsText.text = coins.ToString("n0");
             PuzzleMatchManager.instance.coinsSystem.Subscribe(OnCoinsChanged);
 
-            foreach (var item in PuzzleMatchManager.instance.gameConfig.iapItems)
+            /*foreach (var item in PuzzleMatchManager.instance.gameConfig.iapItems)
             {
                 var row = Instantiate(iapRowPrefab);
                 row.transform.SetParent(iapItemsParent.transform, false);
                 row.GetComponent<IapRow>().Fill(item);
+                row.GetComponent<IapRow>().buyCoinsPopup = this;
+            }*/
+
+            var items = PuzzleMatchManager.instance.gameConfig.iapItems;
+
+            for (int i = 0; i < items.Count; i++)
+            {
+                var row = Instantiate(iapRowPrefab);
+                row.transform.SetParent(iapItemsParent.transform, false);
+                row.GetComponent<IapRow>().Fill(items[i], i);
                 row.GetComponent<IapRow>().buyCoinsPopup = this;
             }
         }

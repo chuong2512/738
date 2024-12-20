@@ -75,14 +75,6 @@
             "mostPopular": false,
             "bestValue": false,
             "coinIcon": "MediumSmall"
-        },
-        {
-            "storeId": "com.gamevanilla.candymatch3.coinspack1",
-            "numCoins": 150,
-            "discount": 0,
-            "mostPopular": false,
-            "bestValue": false,
-            "coinIcon": "Small"
         }
     ],
     "dailyBonus": [
