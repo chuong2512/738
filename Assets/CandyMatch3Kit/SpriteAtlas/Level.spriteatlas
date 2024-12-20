@@ -31,6 +31,7 @@ SpriteAtlas:
       m_CrunchedCompression: 0
       m_AllowsAlphaSplitting: 0
       m_Overridden: 0
+      m_IgnorePlatformSupport: 0
       m_AndroidETC2FallbackOverride: 0
       m_ForceMaximumCompressionQuality_BC6H_BC7: 1
     packingSettings:
@@ -40,6 +41,8 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: c0222f79cb3de46d89bba383458b9fb5, type: 3}
@@ -57,6 +60,30 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 662c33d0f16be4e40ad561b104afb5b1, type: 3}
     - {fileID: 2800000, guid: 2f6590f40d6a54f648e5a9b7784a3e12, type: 3}
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 662c33d0f16be4e40ad561b104afb5b1: 21300000
+    - 8568c6f006c11417eae65f5d58771af1: 21300000
+    - 60dfe002259644e9cac53d39c16ab382: 21300000
+    - 3df33c438b61f4ebc83993bc62b24408: 21300000
+    - de9095547c6574cf69f0f304bf1ff203: 21300000
+    - 04a8a4d4f7d464161819a38756dd1cf6: 21300000
+    - 2f6590f40d6a54f648e5a9b7784a3e12: 21300000
+    - b89859f4188c548b086b6bd81effb84e: 21300000
+    - e85793a54f4f1451fbc8381c7d32e05c: 21300000
+    - 5d7c02e5de33942d9aef8b765e1c1993: 21300000
+    - b5a754a73cae74912ab713bb4d3551d6: 21300000
+    - 1f9c5ab8438ae4f748933b97e186d848: 21300000
+    - 396d7509000fa4ed683fe01b209e3b50: 21300000
+    - b2498bd9a9af54a80846875078647fc4: 21300000
+    - 472816f9f05784e0dae8beea31f3fdef: 21300000
+    - 66c927fb404b94b05a35445eb3758abe: 21300000
+    - 4efbfc8c3fff7472b8aa05995768fb9c: 21300000
+    - b34910dde9bbf4136af490abd2bb1a65: 21300000
+    - e31cb16e655b346eaad29ec82bfbd11a: 21300000
+    - 9feea18ee44c74bd79d37d0cc88e5d1d: 21300000
+    - 80ee17eee7cbb4fc9ba92b97ceba6d43: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 662c33d0f16be4e40ad561b104afb5b1, type: 3}
@@ -102,5 +129,6 @@ SpriteAtlas:
   - Border
   - RingShine
   - CoinIcon
+  m_RenderDataMap: {}
   m_Tag: Level
   m_IsVariant: 0

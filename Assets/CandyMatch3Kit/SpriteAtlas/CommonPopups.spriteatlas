@@ -31,6 +31,7 @@ SpriteAtlas:
       m_CrunchedCompression: 0
       m_AllowsAlphaSplitting: 0
       m_Overridden: 0
+      m_IgnorePlatformSupport: 0
       m_AndroidETC2FallbackOverride: 0
       m_ForceMaximumCompressionQuality_BC6H_BC7: 1
     packingSettings:
@@ -40,11 +41,21 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: bbaa430ae93a84ad0a995fd0dd23a8ea, type: 3}
     - {fileID: 102900000, guid: 7193014742ad14cb980cfb50eae15f3c, type: 3}
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - bdfb6cd0c196e4355921a2ba78d0e147: 21300000
+    - affa40016622140c9a71d9334d89d7bb: 21300000
+    - d48857d1a10a847f6a0bb2cc4f00459a: 21300000
+    - 118a1e223abb64357ad7a993c212d267: 21300000
+    - da70381c27d80430887a142d8cbe2124: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: bdfb6cd0c196e4355921a2ba78d0e147, type: 3}
@@ -58,5 +69,6 @@ SpriteAtlas:
   - Background
   - CloseButton
   - Button
+  m_RenderDataMap: {}
   m_Tag: CommonPopups
   m_IsVariant: 0

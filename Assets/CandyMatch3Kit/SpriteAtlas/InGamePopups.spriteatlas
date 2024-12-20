@@ -31,6 +31,7 @@ SpriteAtlas:
       m_CrunchedCompression: 0
       m_AllowsAlphaSplitting: 0
       m_Overridden: 0
+      m_IgnorePlatformSupport: 0
       m_AndroidETC2FallbackOverride: 0
       m_ForceMaximumCompressionQuality_BC6H_BC7: 1
     packingSettings:
@@ -40,16 +41,38 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: d2f6cbc32fc0941689243c7f25dcf829, type: 3}
     - {fileID: 102900000, guid: cb1c26705a5a342668beeb313c6a24a9, type: 3}
     - {fileID: 102900000, guid: 9eb785e2da70e49aabf37ab4b1f5c61b, type: 3}
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 15799b32a0d1a41a7ad43e6039ee452e: 21300000
+    - 1b54bfc2b329440e0b08ec965f6056fa: 21300000
+    - 0a09b9c39b94879448d0145430ce4904: 21300000
+    - ce9190a4692584a8b8dffd62eebea014: 21300000
+    - c573e3251885647d2aa36184fec36c37: 21300000
+    - 8c840466cbbe9496dbc13deecbf2196b: 21300000
+    - e62ad0378b343431bb3f505af210056d: 21300000
+    - 3f1769a7d6b1a4440a7860282a29e6c4: 21300000
+    - 81825b080489144c58fe47b7cce50dfd: 21300000
+    - 8e5d18692336b45c7a408f21af4b9e88: 21300000
+    - facb87d9017ad4597abbb36b3ee79ddc: 21300000
+    - 4cbbb67a233814f89b4815ce526c0b4f: 21300000
+    - ac10a85b410014dcbaca4abfe451d687: 21300000
+    - 75a0981c44486447893306740d68ca87: 21300000
+    - bd54326c35eae4ee290c8ee9abcb0aa4: 21300000
+    - fa2c0bfd329cd814e83bb32ec8701e7e: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 15799b32a0d1a41a7ad43e6039ee452e, type: 3}
   - {fileID: 21300000, guid: 1b54bfc2b329440e0b08ec965f6056fa, type: 3}
+  - {fileID: 21300000, guid: 0a09b9c39b94879448d0145430ce4904, type: 3}
   - {fileID: 21300000, guid: ce9190a4692584a8b8dffd62eebea014, type: 3}
   - {fileID: 21300000, guid: c573e3251885647d2aa36184fec36c37, type: 3}
   - {fileID: 21300000, guid: 8c840466cbbe9496dbc13deecbf2196b, type: 3}
@@ -66,6 +89,7 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - Button
   - Background
+  - BoosterLollipop
   - BoosterColorBomb
   - CoinsAmountBackground
   - CloseButton
@@ -79,5 +103,6 @@ SpriteAtlas:
   - CandyMatchLogo
   - Background
   - Lollipop
+  m_RenderDataMap: {}
   m_Tag: InGamePopups
   m_IsVariant: 0
