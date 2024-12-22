@@ -18,6 +18,7 @@ using GameVanilla.Game.UI;
 
 namespace GameVanilla.Game.Common
 {
+    
     /// <summary>
     /// This class is responsible for managing the match-3 gameplay of the kit.
     /// </summary>
